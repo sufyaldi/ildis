@@ -1,0 +1,10 @@
+# Ignore system & build logs
+.env
+VERSION
+install.sh
+logs/
+backups/
+
+# Ignore screenshot images in temp folder
+temp/*.png
+temp/*.jpg

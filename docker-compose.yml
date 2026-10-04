@@ -1,0 +1,99 @@
+services:
+  db:
+    image: mariadb:10.11
+    container_name: ildis_mariadb
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_DATABASE:-ildis_v4}
+      MYSQL_USER: ${DB_USER:-ildis}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: [ "CMD-SHELL", "healthcheck.sh --connect --innodb_initialized" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    image: ghcr.io/bphndigitalservice/ildis:${ILDIS_IMAGE_TAG:-latest}
+    container_name: ildis_app
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:${PORT:-8080}:80"
+    volumes:
+      - runtime:/var/www/runtime
+      - backend-assets:/var/www/backend/web/assets
+      - frontend-assets:/var/www/frontend/web/assets
+      - backend-uploads:/var/www/backend/web/uploads
+      - frontend-uploads:/var/www/frontend/web/uploads
+      - feed_data:/var/www/feed
+      - ./nginx/default.conf:/etc/nginx/http.d/default.conf:ro
+      - ./logs/nginx:/var/log/nginx
+      - app_logs:/var/www/runtime/logs
+      # Custom Views & Theme Override (Full Hijau Tosca Theme)
+      - /tmp/original_style.css:/var/www/frontend/assets/css/style.css:ro
+      - /tmp/original_index.php:/var/www/frontend/views/site/index.php:ro
+      - /tmp/original_footer.php:/var/www/frontend/views/layouts/footer.php:ro
+      - ./assets/js/jdih-app.js:/var/www/frontend/assets/js/jdih-app.js:ro
+    environment:
+      - S6_KEEP_ENV=1
+      - YII_ENV=${YII_ENV:-prod}
+      - YII_DEBUG=${YII_DEBUG:-false}
+      - DB_HOST=db
+      - DB_USER=${DB_USER:-ildis}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_DATABASE=${DB_DATABASE:-ildis_v4}
+      - DB_DATABASE_PORT=${DB_DATABASE_PORT:-3306}
+      - PUBLIC_DOMAIN=${PUBLIC_DOMAIN:-http://localhost:8080}
+      - COOKIE_VALIDATION_KEY_BE=${COOKIE_VALIDATION_KEY_BE}
+      - COOKIE_VALIDATION_KEY_FE=${COOKIE_VALIDATION_KEY_FE}
+      - RECAPTCHA_ENABLED=${RECAPTCHA_ENABLED:-false}
+      - RECAPTCHA_SITE_KEY=${RECAPTCHA_SITE_KEY:-}
+      - RECAPTCHA_SECRET_KEY=${RECAPTCHA_SECRET_KEY:-}
+      - PHP_DISPLAY_ERRORS=Off
+      - PHP_ERROR_REPORTING='E_ALL & ~E_DEPRECATED'
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost/" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  cron:
+    image: ghcr.io/bphndigitalservice/ildis-cron:${ILDIS_IMAGE_TAG:-latest}
+    container_name: ildis_cron
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - feed_data:/var/www/feed
+    environment:
+      - YII_ENV=${YII_ENV:-prod}
+      - YII_DEBUG=${YII_DEBUG:-false}
+      - DB_HOST=db
+      - DB_USER=${DB_USER:-ildis}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_DATABASE=${DB_DATABASE:-ildis_v4}
+      - DB_DATABASE_PORT=${DB_DATABASE_PORT:-3306}
+    stop_grace_period: 30s
+    healthcheck:
+      test: ["CMD", "test", "-f", "/var/www/feed/document.json"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+      start_period: 120s
+
+volumes:
+  mysql_data:
+  runtime:
+  backend-assets:
+  frontend-assets:
+  backend-uploads:
+  frontend-uploads:
+  feed_data:
+  app_logs:
