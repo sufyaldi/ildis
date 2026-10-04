@@ -180,7 +180,7 @@ section {
 }
 
 .feature-1 .wrap-icon.icon-1 {
-  background: linear-gradient(-45deg, #3b87bd, #0d9488);
+  background: linear-gradient(-45deg, #14b8a6, #0d9488);
 }
 
 .feature-1 .wrap-icon i {
@@ -344,7 +344,7 @@ section {
 
 /* CTA Section */
 .cta-section {
-  background: linear-gradient(to right, rgb(39, 70, 133) 0%, rgb(61, 179, 197) 100%);
+  background: linear-gradient(135deg, #0f766e 0%, #0d9488 50%, #14b8a6 100%);
   color: #fff;
 }
 
@@ -905,7 +905,7 @@ body.mobile-nav-active {
 # Hero Section
 --------------------------------------------------------------*/
 .hero-section {
-  background: linear-gradient(to right, rgba(39, 70, 133, 0.8) 0%, rgba(61, 179, 197, 0.8) 100%), url(../img/hero-bg.jpg);
+  background: linear-gradient(135deg, #0f766e 0%, #0d9488 50%, #14b8a6 100%) !important;
   position: relative;
 }
 
