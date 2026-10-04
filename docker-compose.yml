@@ -35,10 +35,11 @@ services:
       - ./nginx/default.conf:/etc/nginx/http.d/default.conf:ro
       - ./logs/nginx:/var/log/nginx
       - app_logs:/var/www/runtime/logs
-      # Custom Views & Theme Override (Full Hijau Tosca Theme)
-      - /tmp/original_style.css:/var/www/frontend/assets/css/style.css:ro
-      - /tmp/original_index.php:/var/www/frontend/views/site/index.php:ro
-      - /tmp/original_footer.php:/var/www/frontend/views/layouts/footer.php:ro
+      # Custom Views & Theme Override (Full Hijau Tosca Theme + Brand Text)
+      - ./custom_views/original_style.css:/var/www/frontend/assets/css/style.css:ro
+      - ./custom_views/original_index.php:/var/www/frontend/views/site/index.php:ro
+      - ./custom_views/original_footer.php:/var/www/frontend/views/layouts/footer.php:ro
+      - ./custom_views/main.php:/var/www/frontend/views/layouts/main.php:ro
       - ./assets/js/jdih-app.js:/var/www/frontend/assets/js/jdih-app.js:ro
     environment:
       - S6_KEEP_ENV=1
