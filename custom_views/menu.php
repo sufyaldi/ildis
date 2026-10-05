@@ -84,6 +84,7 @@ $menuItems = [
             ],
             ['label' => 'SK Tim Pengelola', 'url' => ['site/pengelola']],
             ['label' => 'SOP', 'url' => ['site/sop']],
+            ['label' => 'Statistik Dokumen Hukum', 'url' => ['/statistik']],
         ]
     ],
 
@@ -134,15 +135,7 @@ $menuItems = [
             ['label' => 'SRIKANDI Web', 'url' => Url::to('https://srikandi.arsip.go.id/')],
         ]
     ],
-    [
-        'label' => 'Statistik',
-        'url' => ['/statistik'],
-        'options' => ['class' => 'mobile-menu-item nav-chart-item'],
-        'template' => '<a href="{url}" class="mobile-menu-link nav-chart-link d-inline-flex align-items-center gap-1" title="Statistik Dokumen Hukum" aria-label="Statistik Dokumen Hukum">'
-            . '<span class="mobile-menu-icon me-1" aria-hidden="true"><i class="bi bi-bar-chart-line-fill text-teal"></i></span>'
-            . '<span class="mobile-menu-label font-weight-bold">{label}</span>'
-            . '</a>',
-    ],
+
 
 ];
 
