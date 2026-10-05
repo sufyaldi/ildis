@@ -76,6 +76,7 @@ if (empty($this->params['description'])) {
 
             <div class="logo d-flex align-items-center">
               <a href="<?= Url::to(['/']) ?>" class="d-flex align-items-center text-decoration-none">
+                <img src="/frontend/assets/img/logo_iainpare.png" alt="Logo IAIN Parepare" style="height: 48px; width: auto; margin-right: 8px;">
                 <?= \common\components\LazyImage::img('@web/common/dokumen/' . $logo->isi_konfig, [
                     'id' => 'logo',
                     'alt' => Html::encode($siteName),

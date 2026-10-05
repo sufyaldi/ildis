@@ -48,6 +48,7 @@ services:
       - ./custom_views/visi.php:/var/www/frontend/views/site/visi.php:ro
       - ./custom_views/sop.php:/var/www/frontend/views/site/sop.php:ro
       - ./custom_views/misi.php:/var/www/frontend/views/site/misi.php:ro
+      - ./custom_views/logo_iainpare.png:/var/www/frontend/assets/img/logo_iainpare.png:ro
       - ./assets/js/jdih-app.js:/var/www/frontend/assets/js/jdih-app.js:ro
     environment:
       - S6_KEEP_ENV=1
