@@ -46,6 +46,20 @@ if (empty($this->params['description'])) {
 
     <?= $this->render('_google_analytics') ?>
 
+
+    <style>
+      .hero-section,
+      .hero-section.inner-page,
+      .page-header,
+      .page-title-section,
+      header.fixed-top + div,
+      section[class*="hero"],
+      div[class*="hero"] {
+        background: linear-gradient(135deg, #0f766e 0%, #0d9488 50%, #14b8a6 100%) !important;
+        background-color: #0d9488 !important;
+      }
+    </style>
+<link href="/frontend/assets/css/jdih-theme-override.css" rel="stylesheet">
 </head>
 
 

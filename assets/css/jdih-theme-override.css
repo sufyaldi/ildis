@@ -10,15 +10,19 @@
   --jdih-tosca-bg: #f0fdf4 !important;
 }
 
-/* 1. Hero Section & Inline Style Overrides (#1a2752 / #243566 -> Hijau Tosca) */
+/* 1. Page Header Background, Hero Section, & All Dark Blue Background Overrides (#1a2752 / #243566 -> Hijau Tosca) */
+.page-header-bg,
 .search-landing-container,
 .hero-section,
-.bg-primary,
+.hero-section.inner-page,
 .site-header,
 .navbar,
-[style*="background: rgba(26, 39, 82"],
+.bg-primary,
 [style*="background-color: #1a2752"],
-[style*="background-color: #243566"] {
+[style*="background-color:#1a2752"],
+[style*="background-color: #243566"],
+[style*="background-color:#243566"],
+[style*="background: rgba(26, 39, 82"] {
   background: linear-gradient(135deg, #0f766e 0%, #0d9488 50%, #14b8a6 100%) !important;
   background-color: #0d9488 !important;
 }
@@ -29,21 +33,19 @@
   background: radial-gradient(circle, rgba(20, 184, 166, 0.4) 0%, rgba(13, 148, 136, 0) 70%) !important;
 }
 
-/* 3. Search Button (#1a2752 -> Hijau Tosca) */
+/* 3. Search Button & Primary Buttons */
 .btn-primary,
 .btn-search,
 button.btn-search,
 button[type="submit"].btn-primary,
-.search-input-group .btn-primary,
-[style*="background-color: #1a2752"] {
+.search-input-group .btn-primary {
   background-color: #0d9488 !important;
   border-color: #0d9488 !important;
   color: #ffffff !important;
 }
 
 .btn-primary:hover,
-.btn-search:hover,
-[style*="background-color: #243566"]:hover {
+.btn-search:hover {
   background-color: #0f766e !important;
   border-color: #0f766e !important;
 }
@@ -52,7 +54,12 @@ button[type="submit"].btn-primary,
 a:hover,
 .text-primary,
 .nav-link.active,
-.koleksi-card__title:hover {
+.koleksi-card__title:hover,
+.content-wrapper h1, 
+.content-wrapper h2, 
+.content-wrapper h3, 
+.content-wrapper h4, 
+.content-wrapper h5 {
   color: #0d9488 !important;
 }
 

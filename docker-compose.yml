@@ -40,6 +40,14 @@ services:
       - ./custom_views/original_index.php:/var/www/frontend/views/site/index.php:ro
       - ./custom_views/original_footer.php:/var/www/frontend/views/layouts/footer.php:ro
       - ./custom_views/main.php:/var/www/frontend/views/layouts/main.php:ro
+      - ./custom_views/sekilas-sejarah.php:/var/www/frontend/views/site/sekilas-sejarah.php:ro
+      - ./custom_views/pengelola.php:/var/www/frontend/views/site/pengelola.php:ro
+      - ./custom_views/struktur-organisasi.php:/var/www/frontend/views/site/struktur-organisasi.php:ro
+      - ./custom_views/dasar-hukum.php:/var/www/frontend/views/site/dasar-hukum.php:ro
+      - ./custom_views/struktur-organisasi-jdihinstansi.php:/var/www/frontend/views/site/struktur-organisasi-jdihinstansi.php:ro
+      - ./custom_views/visi.php:/var/www/frontend/views/site/visi.php:ro
+      - ./custom_views/sop.php:/var/www/frontend/views/site/sop.php:ro
+      - ./custom_views/misi.php:/var/www/frontend/views/site/misi.php:ro
       - ./assets/js/jdih-app.js:/var/www/frontend/assets/js/jdih-app.js:ro
     environment:
       - S6_KEEP_ENV=1
