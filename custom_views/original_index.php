@@ -637,6 +637,37 @@ $totalTidakBerlaku  = Dokumen::find()->where(['status' => 'Tidak Berlaku', 'is_p
             </div>
         </section>
 
+        <!-- SRIKANDI E-Pengajuan CTA Banner -->
+        <section class="srikandi-cta-section py-5" style="background: linear-gradient(135deg, #0f766e 0%, #0d9488 100%); color: #ffffff;">
+            <div class="container">
+                <div class="row align-items-center justify-content-between g-4">
+                    <div class="col-lg-8 text-center text-lg-start">
+                        <div class="d-inline-flex align-items-center px-3 py-1 mb-3 rounded-pill" style="background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.25); font-size: 0.85rem; font-weight: 600;">
+                            <i class="bi bi-shield-check text-warning me-2"></i> Layanan Resmi E-Office &amp; Tata Naskah Dinas
+                        </div>
+                        <h2 class="fw-bold mb-3" style="font-size: 1.85rem; color: #ffffff; letter-spacing: -0.5px;">
+                            Pengajuan &amp; Penyusunan Produk Hukum Mandiri
+                        </h2>
+                        <p class="mb-0" style="color: #ccfbf1; font-size: 1.05rem; line-height: 1.6; max-width: 680px;">
+                            Ingin mengajukan Usulan Peraturan, Keputusan Rektor, Naskah Akademik, atau Produk Hukum lainnya? Gunakan aplikasi <strong>SRIKANDI ANRI / Kemenag RI</strong> untuk pengajuan resmi terintegrasi TTE.
+                        </p>
+                    </div>
+                    <div class="col-lg-4 text-center text-lg-end">
+                        <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-end gap-2">
+                            <a href="https://srikandi.arsip.go.id/" target="_blank" rel="noopener noreferrer" class="btn btn-warning btn-lg fw-bold rounded-pill px-4 py-3 shadow-sm" style="color: #0f766e; background-color: #ffc107; border: none; font-size: 1rem;">
+                                <i class="bi bi-box-arrow-up-right me-2"></i> Akses SRIKANDI Web
+                            </a>
+                        </div>
+                        <div class="mt-2 text-center text-lg-end">
+                            <small style="color: #99f6e4; font-size: 0.78rem;">
+                                <i class="bi bi-phone me-1"></i> Tersedia di Google Play Store &amp; App Store
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- News Strip (Only on landing) -->
         <?= $this->render('_popular-documents', ['popularDocuments' => $popularDocuments ?? []]) ?>
 

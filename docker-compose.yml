@@ -39,6 +39,7 @@ services:
       - ./custom_views/original_style.css:/var/www/frontend/assets/css/style.css:ro
       - ./custom_views/original_index.php:/var/www/frontend/views/site/index.php:ro
       - ./custom_views/original_footer.php:/var/www/frontend/views/layouts/footer.php:ro
+      - ./custom_views/menu.php:/var/www/frontend/views/layouts/menu.php:ro
       - ./custom_views/main.php:/var/www/frontend/views/layouts/main.php:ro
       - ./custom_views/sekilas-sejarah.php:/var/www/frontend/views/site/sekilas-sejarah.php:ro
       - ./custom_views/pengelola.php:/var/www/frontend/views/site/pengelola.php:ro

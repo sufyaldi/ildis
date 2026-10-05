@@ -107,6 +107,7 @@ $appVersion = file_exists($versionPath) ? trim(file_get_contents($versionPath)) 
           <div class="col-6 col-md-6 col-lg-5 footer-nav-col ps-lg-5">
             <h3 class="footer-nav__title">Layanan</h3>
             <ul class="footer-nav__list list-unstyled mb-0">
+              <li><a href="https://srikandi.arsip.go.id/" target="_blank" rel="noopener noreferrer" class="footer-link" style="color: #5eead4; font-weight: 600;"><i class="bi bi-send-check-fill me-1"></i> E-Pengajuan (SRIKANDI)</a></li>
               <li><a href="#" class="footer-link">Pengaduan</a></li>
               <li><a href="#" class="footer-link">Penilaian</a></li>
             </ul>
