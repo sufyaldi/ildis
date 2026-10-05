@@ -155,7 +155,7 @@ $appVersion = file_exists($versionPath) ? trim(file_get_contents($versionPath)) 
 
     <div class="footer-bottom">
       <p class="footer-bottom__copy">
-        &copy; <?= date('Y') ?> <?= Html::encode($cleanInstansi) ?> &middot; Powered by BPHN RI
+        &copy; 2019 <?= Html::encode($cleanInstansi) ?> &middot; Powered by BPHN RI
       </p>
 
       <div class="footer-bottom__meta">
