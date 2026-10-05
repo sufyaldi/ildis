@@ -473,7 +473,7 @@ $totalTidakBerlaku  = Dokumen::find()->where(['status' => 'Tidak Berlaku', 'is_p
             </picture>
 
             <div class="text-center mb-3" data-aos="fade-up">
-                <img src="/common/dokumen/logo_iainpare.png" alt="Logo IAIN Parepare" style="max-height: 110px; width: auto; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));">
+                <img src="/frontend/assets/img/logo_iainpare.png" alt="Logo IAIN Parepare" style="max-height: 110px; width: auto; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));">
             </div>
 
             <div class="text-center text-white mb-4" data-aos="fade-up" data-aos-delay="50">
