@@ -646,10 +646,10 @@ $totalTidakBerlaku  = Dokumen::find()->where(['status' => 'Tidak Berlaku', 'is_p
                             <i class="bi bi-shield-check text-warning me-2"></i> Layanan Resmi E-Office &amp; Tata Naskah Dinas
                         </div>
                         <h2 class="fw-bold mb-3" style="font-size: 1.85rem; color: #ffffff; letter-spacing: -0.5px;">
-                            Pengajuan &amp; Penyusunan Produk Hukum Mandiri
+                            Pengajuan &amp; Penyusunan Produk Hukum Internal
                         </h2>
                         <p class="mb-0" style="color: #ccfbf1; font-size: 1.05rem; line-height: 1.6; max-width: 680px;">
-                            Ingin mengajukan Usulan Peraturan, Keputusan Rektor, Naskah Akademik, atau Produk Hukum lainnya? Gunakan aplikasi <strong>SRIKANDI ANRI / Kemenag RI</strong> untuk pengajuan resmi terintegrasi TTE.
+                            Ingin mengajukan Usulan Peraturan, Keputusan Rektor, Naskah Akademik, atau Produk Hukum lainnya? Gunakan aplikasi <strong>SRIKANDI</strong> untuk pengajuan resmi terintegrasi TTE.
                         </p>
                     </div>
                     <div class="col-lg-4 text-center text-lg-end">
