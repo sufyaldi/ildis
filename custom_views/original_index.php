@@ -653,14 +653,23 @@ $totalTidakBerlaku  = Dokumen::find()->where(['status' => 'Tidak Berlaku', 'is_p
                         </p>
                     </div>
                     <div class="col-lg-4 text-center text-lg-end">
-                        <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-end gap-2">
-                            <a href="https://srikandi.arsip.go.id/" target="_blank" rel="noopener noreferrer" class="btn btn-warning btn-lg fw-bold rounded-pill px-4 py-3 shadow-sm" style="color: #0f766e; background-color: #ffc107; border: none; font-size: 1rem;">
-                                <i class="bi bi-box-arrow-up-right me-2"></i> Akses SRIKANDI Web
+                        <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-end gap-2 mb-3">
+                            <a href="https://srikandi.arsip.go.id/" target="_blank" rel="noopener noreferrer" class="btn btn-warning btn-lg fw-bold rounded-pill px-4 py-2 shadow-sm" style="color: #0f766e; background-color: #ffc107; border: none; font-size: 0.95rem;">
+                                <i class="bi bi-globe me-1"></i> SRIKANDI Web
+                            </a>
+                            <a href="https://play.google.com/store/apps/details?id=com.anri.srikandi.v3" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light btn-lg fw-bold rounded-pill px-3 py-2" style="font-size: 0.9rem; border-color: rgba(255,255,255,0.4);">
+                                <i class="bi bi-google-play me-1"></i> Android
+                            </a>
+                            <a href="https://apps.apple.com/us/app/srikandi/id6745420835" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light btn-lg fw-bold rounded-pill px-3 py-2" style="font-size: 0.9rem; border-color: rgba(255,255,255,0.4);">
+                                <i class="bi bi-apple me-1"></i> iOS
                             </a>
                         </div>
-                        <div class="mt-2 text-center text-lg-end">
-                            <small style="color: #99f6e4; font-size: 0.78rem;">
-                                <i class="bi bi-phone me-1"></i> Tersedia di Google Play Store &amp; App Store
+                        <div class="text-center text-lg-end">
+                            <small style="color: #99f6e4; font-size: 0.8rem;">
+                                Unduh Aplikasi Mobile: 
+                                <a href="https://play.google.com/store/apps/details?id=com.anri.srikandi.v3" target="_blank" rel="noopener noreferrer" class="text-white text-decoration-underline ms-1 me-2"><i class="bi bi-google-play"></i> Play Store</a>
+                                &middot;
+                                <a href="https://apps.apple.com/us/app/srikandi/id6745420835" target="_blank" rel="noopener noreferrer" class="text-white text-decoration-underline ms-2"><i class="bi bi-apple"></i> App Store</a>
                             </small>
                         </div>
                     </div>
