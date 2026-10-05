@@ -5,6 +5,5 @@ install.sh
 logs/
 backups/
 
-# Ignore screenshot images in temp folder
-temp/*.png
-temp/*.jpg
+# Ignore temp folder contents
+temp/
