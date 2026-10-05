@@ -34,19 +34,24 @@ Sesuai arahan dan identitas institusi, seluruh elemen visual aplikasi telah dipe
 - **Primary Color Palette**: `#0d9488` (Default Tosca), `#0f766e` (Hover / Active Darker Tosca), `#ccfbf1` (Light Background Accent).
 - **Tombol "Lihat Semua Berita"**: Menggunakan gaya *Transparent Outline* di kondisi normal yang bertransisi menjadi *Full Solid Hijau Tosca* saat kursor diarahkan (*hover*).
 
-#### B. Header & Footer Identity
-- **Header & Navbar**:
-  - Logo IAIN Parepare berdampingan dengan teks merek resmi: **JDIH IAIN PAREPARE** dan sub-title **Jaringan Dokumentasi & Informasi Hukum**.
-  - Menu navigasi bersih: Beranda, Tentang Kami, Jenis Dokumen, Dokumen Pembentukan PUU, Berita, Link Terkait, dan Statistik.
+#### B. Header & Footer Identity & Mobile Responsiveness
+- **Dual-Logo Header & Brand Text**:
+  - Berdampingan di sisi paling kiri: **Logo Resmi IAIN Parepare** (`logo_iain_rapat.png`, disesuaikan tinggi visualnya `54px`) dan **Logo JDIHN** (`48px`).
+  - Teks Merek Utama: **JDIH**, pembatas vertikal `|`, teks **IAIN PAREPARE**, dan sub-judul **Jaringan Dokumentasi & Informasi Hukum**.
+  - **Optimasi Responsif Mobile (Android/iOS)**:
+    - Pada layar smartphone/mobile, teks panjang *"IAIN PAREPARE - Jaringan Dokumentasi & Informasi Hukum"* serta garis pembatas `|` di-hidden secara otomatis via Bootstrap responsive utility classes (`d-none d-md-flex`).
+    - Hal ini memberikan ruang yang bersih dan luas bagi ikon **Menu Garis 3 (Hamburger Toggle)** di pojok kanan atas agar tidak tertutupi atau terdorong.
 - **Footer**:
   - Alamat Resmi: *Jl. Amal Bakti No. 08, Soreang, Kota Parepare, Sulawesi Selatan*.
   - Kontak Email Resmi: `jdih@iainpare.ac.id`.
+  - Hak Cipta & Kredit Sistem: **`© 2019 Institut Agama Islam Negeri (IAIN Parepare) · Powered by BPHN RI`**.
 
 #### C. Layout Mounting via Docker
 Perubahan tema visual diterapkan secara aman tanpa merusak struktur internal kerangka Yii2 dengan melakukan *volume mount* langsung di `docker-compose.yml`:
 - Custom CSS Override (`assets/css/jdih-theme-override.css`)
 - Custom Layout Main (`custom_views/main.php`)
-- Custom Header & Footer Partial Views.
+- Custom Sub-Page Views (`custom_views/sekilas-sejarah.php`, `pengelola.php`, `visi.php`, `misi.php`, dll.)
+- Custom Header Logo (`custom_views/logo_iainpare.png`) & Footer Partial Views.
 
 ---
 
