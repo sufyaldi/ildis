@@ -127,30 +127,38 @@ $appVersion = file_exists($versionPath) ? trim(file_get_contents($versionPath)) 
     </div>
 
     <div class="footer-analytics" aria-label="Statistik pengunjung">
-      <div class="analytics-strip">
-        <span class="analytics-title"><i class="bi bi-people" aria-hidden="true"></i> Pengunjung</span>
-        <span class="analytics-stat">
-          <span class="analytics-num"><?= $todayVisits ?></span>
-          <span class="analytics-period">hari ini</span>
-        </span>
-        <span class="analytics-dot" aria-hidden="true"></span>
-        <span class="analytics-stat">
-          <span class="analytics-num"><?= $weekVisits ?></span>
-          <span class="analytics-period">minggu ini</span>
-        </span>
-        <span class="analytics-dot" aria-hidden="true"></span>
-        <span class="analytics-stat">
-          <span class="analytics-num"><?= $monthVisits ?></span>
-          <span class="analytics-period">bulan ini</span>
-        </span>
-        <span class="analytics-dot" aria-hidden="true"></span>
-        <span class="analytics-stat">
-          <span class="analytics-num"><?= $yearVisits ?></span>
-          <span class="analytics-period">tahun ini</span>
-        </span>
-        <span class="analytics-title mt-2">
-          <?= Html::a('Statistik dokumen hukum', ['/statistik'], ['class' => 'footer-link']) ?>
-        </span>
+      <div class="analytics-strip flex-column align-items-center gap-2 text-center">
+        <!-- Baris 1: Statistik Pengunjung Website -->
+        <div class="d-flex align-items-center justify-content-center flex-wrap gap-1">
+          <span class="analytics-title"><i class="bi bi-people" aria-hidden="true"></i> Pengunjung</span>
+          <span class="analytics-stat">
+            <span class="analytics-num"><?= $todayVisits ?></span>
+            <span class="analytics-period">hari ini</span>
+          </span>
+          <span class="analytics-dot" aria-hidden="true"></span>
+          <span class="analytics-stat">
+            <span class="analytics-num"><?= $weekVisits ?></span>
+            <span class="analytics-period">minggu ini</span>
+          </span>
+          <span class="analytics-dot" aria-hidden="true"></span>
+          <span class="analytics-stat">
+            <span class="analytics-num"><?= $monthVisits ?></span>
+            <span class="analytics-period">bulan ini</span>
+          </span>
+          <span class="analytics-dot" aria-hidden="true"></span>
+          <span class="analytics-stat">
+            <span class="analytics-num"><?= $yearVisits ?></span>
+            <span class="analytics-period">tahun ini</span>
+          </span>
+        </div>
+
+        <!-- Baris 2: CTA Tautan Statistik Dokumen Hukum -->
+        <div class="mt-2">
+          <?= Html::a('<i class="bi bi-bar-chart-line-fill me-1"></i> Lihat Statistik Dokumen Hukum <i class="bi bi-arrow-right ms-1"></i>', ['/statistik'], [
+              'class' => 'btn btn-sm btn-outline-warning rounded-pill px-3 py-1 font-weight-bold',
+              'style' => 'font-size: 0.82rem; color: #ffc107; border-color: #ffc107;'
+          ]) ?>
+        </div>
       </div>
     </div>
 
