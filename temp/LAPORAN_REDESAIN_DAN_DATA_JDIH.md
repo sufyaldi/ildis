@@ -34,13 +34,16 @@ Sesuai arahan dan identitas institusi, seluruh elemen visual aplikasi telah dipe
 - **Primary Color Palette**: `#0d9488` (Default Tosca), `#0f766e` (Hover / Active Darker Tosca), `#ccfbf1` (Light Background Accent).
 - **Tombol "Lihat Semua Berita"**: Menggunakan gaya *Transparent Outline* di kondisi normal yang bertransisi menjadi *Full Solid Hijau Tosca* saat kursor diarahkan (*hover*).
 
-#### B. Header & Footer Identity & Mobile Responsiveness
+#### B. Header, Hero Banner & Footer Identity & Mobile Responsiveness
 - **Dual-Logo Header & Brand Text**:
   - Berdampingan di sisi paling kiri: **Logo Resmi IAIN Parepare** (`logo_iain_rapat.png`, disesuaikan tinggi visualnya `54px`) dan **Logo JDIHN** (`48px`).
   - Teks Merek Utama: **JDIH**, pembatas vertikal `|`, teks **IAIN PAREPARE**, dan sub-judul **Jaringan Dokumentasi & Informasi Hukum**.
   - **Optimasi Responsif Mobile (Android/iOS)**:
     - Pada layar smartphone/mobile, teks panjang *"IAIN PAREPARE - Jaringan Dokumentasi & Informasi Hukum"* serta garis pembatas `|` di-hidden secara otomatis via Bootstrap responsive utility classes (`d-none d-md-flex`).
     - Hal ini memberikan ruang yang bersih dan luas bagi ikon **Menu Garis 3 (Hamburger Toggle)** di pojok kanan atas agar tidak tertutupi atau terdorong.
+- **Hero Banner (Beranda Utama)**:
+  - **Logo Instansi Terpusat (*Centered Logo*)**: Menampilkan **Logo Resmi IAIN Parepare** di posisi tengah atas banner dengan efek bayangan (*drop shadow*) halus.
+  - **Tipografi Terstruktur**: Sub-judul bertuliskan **`Jaringan Dokumentasi dan Informasi Hukum`** yang dipadukan dengan nama institusi utama **`JDIH IAIN PAREPARE`** bercetak tebal dan tegas.
 - **Footer**:
   - Alamat Resmi: *Jl. Amal Bakti No. 08, Soreang, Kota Parepare, Sulawesi Selatan*.
   - Kontak Email Resmi: `jdih@iainpare.ac.id`.
