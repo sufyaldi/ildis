@@ -2005,3 +2005,17 @@ body.mobile-nav-active {
   border-color: #0d9488 !important;
   color: #ffffff !important;
 }
+
+/* Enable Statistik Menu Label on Navbar Desktop */
+@media (min-width: 992px) {
+  .navbar .nav-chart-link .mobile-menu-label {
+    display: inline-block !important;
+    font-weight: 700 !important;
+    color: inherit !important;
+    font-size: 0.95rem !important;
+  }
+  .navbar .nav-chart-link .mobile-menu-icon {
+    font-size: 1.1rem !important;
+    color: #0d9488 !important;
+  }
+}

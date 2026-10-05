@@ -135,12 +135,12 @@ $menuItems = [
         ]
     ],
     [
-        'label' => 'Statistik dokumen hukum',
+        'label' => 'Statistik',
         'url' => ['/statistik'],
         'options' => ['class' => 'mobile-menu-item nav-chart-item'],
-        'template' => '<a href="{url}" class="mobile-menu-link nav-chart-link" title="Statistik dokumen hukum" aria-label="Statistik dokumen hukum">'
-            . '<span class="mobile-menu-icon" aria-hidden="true"><i class="bi bi-bar-chart-line"></i></span>'
-            . '<span class="mobile-menu-label">{label}</span>'
+        'template' => '<a href="{url}" class="mobile-menu-link nav-chart-link d-inline-flex align-items-center gap-1" title="Statistik Dokumen Hukum" aria-label="Statistik Dokumen Hukum">'
+            . '<span class="mobile-menu-icon me-1" aria-hidden="true"><i class="bi bi-bar-chart-line-fill text-teal"></i></span>'
+            . '<span class="mobile-menu-label font-weight-bold">{label}</span>'
             . '</a>',
     ],
 
