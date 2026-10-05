@@ -155,8 +155,7 @@ $appVersion = file_exists($versionPath) ? trim(file_get_contents($versionPath)) 
 
     <div class="footer-bottom">
       <p class="footer-bottom__copy">
-        &copy; <?= date('Y') ?> <?= Html::encode($cleanInstansi) ?>
-        powered by <a href="https://ildis.bphn.go.id" target="_blank" rel="noopener noreferrer" class="footer-bottom__ildis">ILDIS</a> v<?= Html::encode($appVersion) ?>
+        &copy; <?= date('Y') ?> <?= Html::encode($cleanInstansi) ?> &middot; Powered by BPHN RI
       </p>
 
       <div class="footer-bottom__meta">
