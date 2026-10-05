@@ -113,15 +113,7 @@ $menuItems = [
         'template' => $parentLinkTemplate('bi-journal-text'),
         'items' => $srikandiItems,
     ],
-    [
-        'label' => 'E-Pengajuan (SRIKANDI)',
-        'url' => 'https://srikandi.arsip.go.id/',
-        'options' => ['class' => 'mobile-menu-item nav-srikandi-item'],
-        'template' => '<a href="{url}" target="_blank" rel="noopener noreferrer" class="mobile-menu-link nav-srikandi-link" title="Pengajuan Produk Hukum via SRIKANDI ANRI" aria-label="Pengajuan Produk Hukum via SRIKANDI ANRI">'
-            . '<span class="mobile-menu-icon" aria-hidden="true"><i class="bi bi-send-check-fill" style="color: #0d9488;"></i></span>'
-            . '<span class="mobile-menu-label" style="font-weight: 700; color: #0d9488;">{label}</span>'
-            . '</a>',
-    ],
+
     [
         'label' => 'Berita',
         'url' => ['berita/index'],
