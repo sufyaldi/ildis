@@ -477,11 +477,11 @@ $totalTidakBerlaku  = Dokumen::find()->where(['status' => 'Tidak Berlaku', 'is_p
             </div>
 
             <div class="text-center text-white mb-4" data-aos="fade-up" data-aos-delay="50">
-                <div style="font-size: 0.95rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: #f8fafc; opacity: 0.95; margin-bottom: 6px;">
-                    JARINGAN DOKUMENTASI DAN INFORMASI HUKUM
+                <div style="font-size: 0.95rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #f8fafc; opacity: 0.95; margin-bottom: 6px;">
+                    Jaringan Dokumentasi dan Informasi Hukum
                 </div>
-                <h1 style="font-size: 2.4rem; font-weight: 800; letter-spacing: -0.5px; color: #ffffff; margin: 0; text-shadow: 0 2px 8px rgba(0,0,0,0.4);">
-                    IAIN Parepare
+                <h1 style="font-size: 2.3rem; font-weight: 900; letter-spacing: -0.5px; color: #ffffff; margin: 0; text-shadow: 0 2px 8px rgba(0,0,0,0.4);">
+                    JDIH IAIN PAREPARE
                 </h1>
             </div>
 
