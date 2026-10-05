@@ -83,8 +83,8 @@ if (empty($this->params['description'])) {
                     'style' => 'height: 48px; width: auto;'
                 ], false); ?>
                 <span class="fw-black text-dark ms-2" style="font-size: 2.2rem; font-family: 'Inter', 'Montserrat', sans-serif; font-weight: 900; letter-spacing: -1px;">JDIH</span>
-                <div style="width: 3px; height: 42px; background-color: #1e293b; margin: 0 14px; display: inline-block;"></div>
-                <div class="d-flex flex-column justify-content-center" style="line-height: 1.1; font-family: 'Inter', sans-serif;">
+                <div class="d-none d-md-inline-block" style="width: 3px; height: 42px; background-color: #1e293b; margin: 0 14px;"></div>
+                <div class="d-none d-md-flex flex-column justify-content-center" style="line-height: 1.1; font-family: 'Inter', sans-serif;">
                   <div class="d-flex gap-1">
                     <span class="fw-black text-dark" style="font-size: 1.15rem; font-weight: 900; letter-spacing: 0.5px;">IAIN</span>
                     <span class="fw-black text-dark" style="font-size: 1.15rem; font-weight: 900; letter-spacing: 0.5px;">PAREPARE</span>
