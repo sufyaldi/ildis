@@ -100,8 +100,20 @@ Seluruh dokumen yang dimasukkan telah memenuhi syarat harvesting Portal JDIHN Na
 
 ---
 
-### 7. PENUTUP & KESIMPULAN
+### 7. INTEGRASI FITUR E-PENGAJUAN PRODUK HUKUM (SRIKANDI)
 
-Sistem **JDIH IAIN Parepare** kini telah bertransformasi menjadi portal repositori hukum modern, responsif, dan kaya akan data peraturan internal maupun nasional. Dengan skema warna Hijau Tosca dan 157 dokumen terstruktur, aplikasi ini siap menyajikan informasi hukum yang transparan dan akuntabel.
+Menindaklanjuti kebutuhan tata kelola permohonan/pengajuan produk hukum internal (Draft Peraturan, Keputusan Rektor, Naskah Akademik):
+1. **Analisis Aplikasi ILDIS BPHN**: Modul bawaan ILDIS difokuskan untuk publikasi & pengarsipan dokumen.
+2. **Penggunaan Sistem SRIKANDI ANRI / Kemenag RI**: Untuk mencegah *redundancy workflow* dan menjamin legalitas Tanda Tangan Elektronik (TTE) BSrE BSSN, proses permohonan pengajuan produk hukum disatukan dengan **Sistem SRIKANDI**.
+3. **Implementasi UI/UX CTA SRIKANDI**:
+   - **Sub-Menu Dokumen Pembentukan PUU**: Ditambahkan tautan `Ajukan Produk Hukum (SRIKANDI)` di dalam dropdown menu.
+   - **Banner E-Pengajuan Internal di Beranda**: Dipasang banner CTA Hijau Tosca bertuliskan *"Pengajuan & Penyusunan Produk Hukum Internal"* lengkap dengan tombol `Akses SRIKANDI Web` serta tautan unduh aplikasi mobile (`Play Store (Android)` & `App Store (iOS)`).
+   - **Footer Links**: Tautan SRIKANDI ditambahkan di kolom *Layanan* & *Link Terkait*.
+
+---
+
+### 8. PENUTUP & KESIMPULAN
+
+Sistem **JDIH IAIN Parepare** kini telah bertransformasi menjadi portal repositori hukum modern, responsif, terintegrasi SRIKANDI, dan kaya akan data peraturan internal maupun nasional.
 
 *Laporan ini dibuat dan disimpan secara otomatis di `/home/iain/app-jdih/temp/LAPORAN_REDESAIN_DAN_DATA_JDIH.md`.*
