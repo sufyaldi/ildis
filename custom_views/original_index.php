@@ -472,12 +472,18 @@ $totalTidakBerlaku  = Dokumen::find()->where(['status' => 'Tidak Berlaku', 'is_p
                 >
             </picture>
 
-            <h1 class="hero-brand" data-aos="fade-up">
-                JDIH
-                <?php if ($instansiText !== ''): ?>
-                    <span class="hero-instansi"><?= Html::encode($instansiText) ?></span>
-                <?php endif; ?>
-            </h1>
+            <div class="text-center mb-3" data-aos="fade-up">
+                <img src="/common/dokumen/logo_iainpare.png" alt="Logo IAIN Parepare" style="max-height: 110px; width: auto; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));">
+            </div>
+
+            <div class="text-center text-white mb-4" data-aos="fade-up" data-aos-delay="50">
+                <div style="font-size: 0.95rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: #f8fafc; opacity: 0.95; margin-bottom: 6px;">
+                    JARINGAN DOKUMENTASI DAN INFORMASI HUKUM
+                </div>
+                <h1 style="font-size: 2.4rem; font-weight: 800; letter-spacing: -0.5px; color: #ffffff; margin: 0; text-shadow: 0 2px 8px rgba(0,0,0,0.4);">
+                    IAIN Parepare
+                </h1>
+            </div>
 
             <form action="<?= Url::to(['dokumen/index']) ?>" method="GET" class="w-100 hero-search-form" data-aos="fade-up" data-aos-delay="100" role="search">
                 <div class="search-input-wrapper">
