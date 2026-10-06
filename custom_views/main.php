@@ -239,6 +239,191 @@ if (empty($this->params['description'])) {
 
     <!-- all js include end -->
 
+    <!-- Modal Pop-up Survey Kepuasan Pengguna (Auto Pop-up) -->
+    <div id="jdih-survey-modal" class="jdih-survey-modal-overlay" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="survey-modal-title">
+        <div class="jdih-survey-modal-card">
+            <button type="button" class="jdih-survey-modal-close" id="jdih-survey-modal-close-btn" aria-label="Tutup modal">
+                <i class="bi bi-x-lg" aria-hidden="true"></i>
+            </button>
+            <div class="jdih-survey-modal-icon-wrapper">
+                <div class="jdih-survey-modal-icon">
+                    <i class="bi bi-patch-question-fill" aria-hidden="true"></i>
+                </div>
+            </div>
+            <h2 id="survey-modal-title" class="jdih-survey-modal-title">Survey Kepuasan Pengguna</h2>
+            <p class="jdih-survey-modal-text">
+                Terima kasih sudah berkunjung! Mohon isi survey kepuasan singkat kami untuk membantu meningkatkan layanan. Survey hanya akan memakan waktu 1-2 menit.
+            </p>
+            <div class="jdih-survey-modal-actions">
+                <a href="<?= Url::to(['/site/survey']) ?>" id="jdih-survey-btn" class="jdih-survey-modal-btn">
+                    Isi Survey
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <style>
+    .jdih-survey-modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(15, 23, 42, 0.65);
+        backdrop-filter: blur(4px);
+        z-index: 99999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+    .jdih-survey-modal-overlay.active {
+        opacity: 1;
+    }
+    .jdih-survey-modal-card {
+        background: #ffffff;
+        border-radius: 20px;
+        max-width: 460px;
+        width: 100%;
+        padding: 36px 28px 32px;
+        text-align: center;
+        position: relative;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        transform: scale(0.9);
+        transition: transform 0.3s ease-in-out;
+    }
+    .jdih-survey-modal-overlay.active .jdih-survey-modal-card {
+        transform: scale(1);
+    }
+    .jdih-survey-modal-close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        background: #f1f5f9;
+        border: none;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #64748b;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+    .jdih-survey-modal-close:hover {
+        background: #e2e8f0;
+        color: #0f172a;
+    }
+    .jdih-survey-modal-icon-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .jdih-survey-modal-icon {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: #ccfbf1;
+        color: #0d9488;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.8rem;
+    }
+    .jdih-survey-modal-title {
+        font-family: 'Inter', sans-serif;
+        font-size: 1.45rem;
+        font-weight: 700;
+        color: #0f172a;
+        margin-bottom: 12px;
+    }
+    .jdih-survey-modal-text {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: #475569;
+        margin-bottom: 24px;
+    }
+    .jdih-survey-modal-actions {
+        display: flex;
+        justify-content: center;
+    }
+    .jdih-survey-modal-btn {
+        display: inline-block;
+        background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+        color: #ffffff !important;
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        font-size: 1rem;
+        padding: 12px 36px;
+        border-radius: 10px;
+        text-decoration: none;
+        box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
+        transition: all 0.2s ease;
+    }
+    .jdih-survey-modal-btn:hover {
+        background: linear-gradient(135deg, #0f766e 0%, #115e59 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(13, 148, 136, 0.4);
+    }
+    </style>
+
+    <script>
+    (function () {
+        const STORAGE_KEY = 'jdih_survey_modal_last_shown';
+        const COOLDOWN_MS = 24 * 60 * 60 * 1000; // 24 jam
+
+        function shouldShowModal() {
+            const lastShown = localStorage.getItem(STORAGE_KEY);
+            if (!lastShown) return true;
+            return (Date.now() - parseInt(lastShown, 10)) > COOLDOWN_MS;
+        }
+
+        function closeModal() {
+            const overlay = document.getElementById('jdih-survey-modal');
+            if (!overlay) return;
+            overlay.classList.remove('active');
+            setTimeout(function () {
+                overlay.style.display = 'none';
+            }, 300);
+            localStorage.setItem(STORAGE_KEY, Date.now().toString());
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            if (!shouldShowModal()) return;
+
+            const overlay = document.getElementById('jdih-survey-modal');
+            const closeBtn = document.getElementById('jdih-survey-modal-close-btn');
+            const surveyBtn = document.getElementById('jdih-survey-btn');
+
+            if (!overlay) return;
+
+            setTimeout(function () {
+                overlay.style.display = 'flex';
+                void overlay.offsetWidth;
+                overlay.classList.add('active');
+            }, 2500);
+
+            if (closeBtn) {
+                closeBtn.addEventListener('click', closeModal);
+            }
+            if (surveyBtn) {
+                surveyBtn.addEventListener('click', closeModal);
+            }
+
+            overlay.addEventListener('click', function (e) {
+                if (e.target === overlay) {
+                    closeModal();
+                }
+            });
+        });
+    })();
+    </script>
+
     <?php $this->endBody() ?>
 
 </body>

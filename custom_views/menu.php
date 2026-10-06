@@ -85,6 +85,7 @@ $menuItems = [
             ['label' => 'SK Tim Pengelola', 'url' => ['site/pengelola']],
             ['label' => 'SOP', 'url' => ['site/sop']],
             ['label' => 'Statistik Dokumen Hukum', 'url' => ['/statistik']],
+            ['label' => 'Survei Kepuasan (IKM)', 'url' => ['/site/survey']],
         ]
     ],
 
