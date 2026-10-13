@@ -50,6 +50,14 @@ services:
       - ./custom_views/sop.php:/var/www/frontend/views/site/sop.php:ro
       - ./custom_views/misi.php:/var/www/frontend/views/site/misi.php:ro
       - ./custom_views/logo_iainpare.png:/var/www/frontend/assets/img/logo_iainpare.png:ro
+      - ./custom_views/_detail.php:/var/www/backend/views/peraturan/_detail.php:ro
+      - ./custom_views/_form-create2.php:/var/www/backend/views/peraturan/_form-create2.php:ro
+      - ./custom_views/_form-create.php:/var/www/backend/views/peraturan/_form-create.php:ro
+      - ./custom_views/_form-create-lampiran.php:/var/www/backend/views/peraturan/lampiran/_form-create-lampiran.php:ro
+      - ./custom_views/_form-update-lampiran.php:/var/www/backend/views/peraturan/lampiran/_form-update-lampiran.php:ro
+      - ./custom_views/view-peraturan.php:/var/www/frontend/views/dokumen/view-peraturan.php:ro
+      - ./custom_views/_data.php:/var/www/frontend/views/dokumen/_data.php:ro
+      - ./custom_backend/PeraturanController.php:/var/www/backend/controllers/PeraturanController.php:ro
       - ./assets/js/jdih-app.js:/var/www/frontend/assets/js/jdih-app.js:ro
     environment:
       - S6_KEEP_ENV=1
@@ -78,6 +86,7 @@ services:
     image: ghcr.io/bphndigitalservice/ildis-cron:${ILDIS_IMAGE_TAG:-latest}
     container_name: ildis_cron
     restart: unless-stopped
+    entrypoint: ["crond", "-f"]
     depends_on:
       db:
         condition: service_healthy
